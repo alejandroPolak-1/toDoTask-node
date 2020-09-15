@@ -13,6 +13,7 @@ const argv = require('yargs')
     .command('create', 'To create a task to do', { description })
     .command('update', 'Updates the completed status of a task', { description, completed })
     .command('delete', 'To delete a task to do', { description })
+    .command('list', 'To list the tasks')
     .help()
     .argv;
 
