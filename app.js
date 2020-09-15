@@ -1,7 +1,8 @@
 const argv = require('./config/yargs').argv;
 const forToDo = require('./forToDo/forToDo');
 
-const colors = require('colors')
+const colors = require('colors');
+const { update } = require('./forToDo/forToDo');
 
 let comand = argv._[0];
 
@@ -24,7 +25,8 @@ switch (comand) {
         console.log("To list");
         break;
     case "update":
-        console.log("to update");
+        let updated = forToDo.update(argv.description, argv.completed);
+        console.log(updated);
         break;
     default:
         console.log("This command is not recognized");
