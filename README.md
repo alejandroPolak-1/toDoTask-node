@@ -12,10 +12,10 @@
  ```
 
 ## Comands
-  `app create` = To create a task to do
-  `app update` = Updates the completed status of a task
-  `app delete` = To delete a task to do
-  `app list` = To list the tasks
+ > `app create` = To create a task to do 
+ > `app update` = Updates the completed status of a task
+ > `app delete` = To delete a task to do
+ > `app list` = To list the tasks
   
 
  ## For create a task put a description
