@@ -2,15 +2,15 @@ const argv = require('./config/yargs').argv;
 const forToDo = require('./forToDo/forToDo');
 
 const colors = require('colors');
-const { update } = require('./forToDo/forToDo');
 
 let comand = argv._[0];
 
 switch (comand) {
     case "create":
-        let task = create(argv.description)
+        let task = forToDo.create(argv.description)
         console.log(task);
         break;
+
     case "list":
         let list = forToDo.getList()
 
@@ -21,13 +21,19 @@ switch (comand) {
             console.log('State: '.red, task.completed);
             console.log('========================'.cyan);
         }
-
         console.log("To list");
         break;
+
     case "update":
         let updated = forToDo.update(argv.description, argv.completed);
         console.log(updated);
         break;
+
+    case "delete":
+        let deleted = forToDo.deleteTask(argv.description);
+        console.log(deleted, colors.red(argv.description), "has been deleted");
+        break;
+
     default:
         console.log("This command is not recognized");
         break;

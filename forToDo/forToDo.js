@@ -39,7 +39,7 @@ const create = (description) => {
 
     saveDB();
 
-    return toDo
+    return toDo;
 }
 
 const getList = () => {
@@ -61,9 +61,25 @@ const update = (description, completed = true) => {
     }
 }
 
+const deleteTask = (description) => {
+    loadDB();
+
+    let newToDoList = toDoList.filter(task => task.description !== description)
+
+    if (newToDoList.length === toDoList.length) false
+    else {
+        toDoList = newToDoList
+        saveDB()
+        return true
+    }
+
+
+}
+
 
 module.exports = {
     create,
     getList,
-    update
+    update,
+    deleteTask
 }
