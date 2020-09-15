@@ -14,7 +14,21 @@ let saveDB = () => {
 
 }
 
+const loadDB = () => {
+
+    try {
+        toDoList = require('../db/data.json')
+    } catch (error) {
+        toDoList = []
+    }
+
+    // console.log(listToDo);
+
+}
+
 const create = (description) => {
+
+    loadDB();
 
     let toDo = {
         description,
