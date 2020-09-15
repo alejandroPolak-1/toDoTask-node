@@ -1,13 +1,14 @@
 const argv = require('./config/yargs').argv;
-// const colors = require('colors')
+const { create } = require('./forToDo/forToDo');
 
-// comand= argv._[0]
+// const colors = require('colors')
 
 let comand = argv._[0];
 
 switch (comand) {
     case "create":
-        console.log("to create");
+        let task = create(argv.description)
+        console.log(task);
         break;
     case "list":
         console.log("To list");
